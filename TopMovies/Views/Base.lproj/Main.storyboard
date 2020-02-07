@@ -63,6 +63,9 @@
                                                     <rect key="frame" x="182" y="236" width="122" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Shedule Viewing"/>
+                                                    <connections>
+                                                        <segue destination="zyq-2D-l1V" kind="show" id="xv3-2Z-PfS"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -96,6 +99,57 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
+        <!--Date PickerVC-->
+        <scene sceneID="x4a-ey-6WW">
+            <objects>
+                <viewController id="zyq-2D-l1V" customClass="DatePickerVC" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pKd-OW-Xzo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-er-Qb0">
+                                <rect key="frame" x="20" y="120" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-x8-qFD">
+                                <rect key="frame" x="20" y="185" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-XT-fY7">
+                                <rect key="frame" x="78" y="787" width="242" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set Viewing"/>
+                                <connections>
+                                    <action selector="dateAndTimeChosen:" destination="zyq-2D-l1V" eventType="touchUpInside" id="kuu-bu-kbI"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gv6-cn-Z2Y">
+                                <rect key="frame" x="0.0" y="239" width="414" height="531"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <locale key="locale" localeIdentifier="en"/>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RJr-rN-tBA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6PN-Od-ora"/>
+                    <connections>
+                        <outlet property="datePicker" destination="gv6-cn-Z2Y" id="yr5-75-Hk7"/>
+                        <outlet property="movieNameLabel" destination="CXF-er-Qb0" id="R5O-oU-eo1"/>
+                        <outlet property="selectedTimeAndDateLabel" destination="ebf-x8-qFD" id="jgX-42-xtR"/>
+                        <outlet property="setViewingButton" destination="Epg-XT-fY7" id="egW-nT-0iY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxa-RS-kRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1899" y="96"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="KVQ-Or-xCF">
             <objects>
@@ -112,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufv-W8-QYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+            <point key="canvasLocation" x="235" y="96"/>
         </scene>
     </scenes>
 </document>
