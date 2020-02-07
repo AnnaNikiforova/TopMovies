@@ -9,7 +9,7 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -26,4 +26,5 @@ class MovieTableViewCell: UITableViewCell {
         ratingLabel.text = movie.rating
         descriptionTextView.text = movie.description
     }
+    
 }

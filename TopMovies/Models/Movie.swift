@@ -24,4 +24,5 @@ class Movie {
         self.rating = rating
         self.description = description
     }
+    
 }

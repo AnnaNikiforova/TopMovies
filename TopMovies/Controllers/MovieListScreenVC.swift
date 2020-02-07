@@ -8,19 +8,19 @@
 
 import UIKit
 
-class MovieListScreenVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MovieListScreenVC: UIViewController {
     
+    // data for TableView
     var movies: [Movie] = []
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         
-        //sets data
+        // sets data
         movies = createArray()
-
-       }
+    }
     
-    // function creates data and returns it into a temporary array
+    // function creates data for TableView and returns it into a temporary array
     func createArray() -> [Movie] {
         
         var tempMovies: [Movie] = []
@@ -28,14 +28,18 @@ class MovieListScreenVC: UIViewController, UITableViewDataSource, UITableViewDel
         
         tempMovies.append(movie1)
         return tempMovies
-        
     }
+
+}
+
+extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let movie = movies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieTableViewCell
         
