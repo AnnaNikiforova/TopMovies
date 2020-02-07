@@ -17,6 +17,7 @@
 		95939E3723EC433700C4C33C /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95939E3523EC433700C4C33C /* MovieTableViewCell.swift */; };
 		95E5E43923EC7D7C008C8A34 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5E43823EC7D7C008C8A34 /* Movie.swift */; };
 		95E5E43D23EDB12C008C8A34 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5E43C23EDB12C008C8A34 /* DatePickerVC.swift */; };
+		95E5E43F23EDEBA9008C8A34 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5E43E23EDEBA9008C8A34 /* NotificationPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		95939E3523EC433700C4C33C /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		95E5E43823EC7D7C008C8A34 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		95E5E43C23EDB12C008C8A34 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickerVC.swift; path = TopMovies/Controllers/DatePickerVC.swift; sourceTree = SOURCE_ROOT; };
+		95E5E43E23EDEBA9008C8A34 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				95E5E43823EC7D7C008C8A34 /* Movie.swift */,
+				95E5E43E23EDEBA9008C8A34 /* NotificationPublisher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E5E43F23EDEBA9008C8A34 /* NotificationPublisher.swift in Sources */,
 				95939E0F23EC2C1800C4C33C /* AppDelegate.swift in Sources */,
 				95939E1123EC2C1800C4C33C /* SceneDelegate.swift in Sources */,
 				95939E3723EC433700C4C33C /* MovieTableViewCell.swift in Sources */,

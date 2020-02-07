@@ -16,10 +16,13 @@ class DatePickerVC: UIViewController {
     
     @IBOutlet weak var setViewingButton: UIButton!
     
+    private let notificationPublisher = NotificationPublisher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         datePicker?.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+       
     }
     
     // sets viewing date and time
@@ -27,6 +30,7 @@ class DatePickerVC: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
        selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)
+        notificationPublisher.sendNotification(title: "Attention", body: "Blah", delayInterval: nil)
     }
     
 }
