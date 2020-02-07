@@ -18,6 +18,7 @@ class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var sheduleViewingButton: UIButton!
     
+    // cell configuration
     func setMovie(movie: Movie) {
         movieImageView.image = movie.image
         movieNameLabel.text = movie.name

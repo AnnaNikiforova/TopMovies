@@ -15,10 +15,12 @@ class MovieListScreenVC: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
            super.viewDidLoad()
         
+        //sets data
         movies = createArray()
 
        }
     
+    // function creates data and returns it into a temporary array
     func createArray() -> [Movie] {
         
         var tempMovies: [Movie] = []
@@ -36,8 +38,11 @@ class MovieListScreenVC: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movie = movies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieTableViewCell
+        
+        // cell configuration
         cell.setMovie(movie: movie)
         cell.selectionStyle = .none
+        
         return cell
     }
     
