@@ -27,10 +27,15 @@ class DatePickerVC: UIViewController {
     
     // sets viewing date and time
     @IBAction func dateAndTimeChosen(_ sender: Any) {
+        
+        // sets date format and puts selected viewing date and time on the screen
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
+       formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
        selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)
-        notificationPublisher.sendNotification(title: "Attention", body: "Blah", delayInterval: nil)
+        
+        // selected date and time from DatePicker triggers the notification
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: datePicker.date)
+        notificationPublisher.sendNotification(title: "Time to watch a movie!", body: "Your viewing is about to start.", dateInterval: triggerDate)
     }
     
 }

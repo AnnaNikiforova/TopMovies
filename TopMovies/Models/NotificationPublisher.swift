@@ -13,23 +13,23 @@ class NotificationPublisher: NSObject {
     
     func sendNotification(title: String,
                           body: String,
-                          delayInterval: DateComponents?) {
+                          dateInterval: DateComponents?) {
         
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = title
         notificationContent.body = body
         
-        var delayTimeTrigger: UNCalendarNotificationTrigger?
+        var delayDateTrigger: UNCalendarNotificationTrigger?
         
-        if let delayInterval = delayInterval {
-            delayTimeTrigger = UNCalendarNotificationTrigger(dateMatching: delayInterval, repeats: false)
+        if let dateInterval = dateInterval {
+            delayDateTrigger = UNCalendarNotificationTrigger(dateMatching: dateInterval, repeats: false)
         }
         
         notificationContent.sound = UNNotificationSound.default
         
         UNUserNotificationCenter.current().delegate = self
         
-        let request = UNNotificationRequest(identifier: "TestLocalNotification", content: notificationContent, trigger: delayTimeTrigger)
+        let request = UNNotificationRequest(identifier: "TestLocalNotification", content: notificationContent, trigger: delayDateTrigger)
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
