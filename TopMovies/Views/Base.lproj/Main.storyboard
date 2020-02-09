@@ -75,6 +75,7 @@
                                             <outlet property="movieNameLabel" destination="hpz-Et-mF9" id="b4f-s2-lX0"/>
                                             <outlet property="ratingLabel" destination="0ch-nJ-QVq" id="2Zu-Po-x8W"/>
                                             <outlet property="releaseDateLabel" destination="UR7-2P-2hI" id="Zbw-cc-X5H"/>
+                                            <outlet property="sheduleViewingButton" destination="uPK-Ab-21a" id="YOc-U3-jCF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

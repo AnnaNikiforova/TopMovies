@@ -12,6 +12,7 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    // asks the user for permission to send notifications
     private func requestNotificationAuthorization(application: UIApplication) {
         
         let center = UNUserNotificationCenter.current()

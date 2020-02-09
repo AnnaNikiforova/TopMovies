@@ -13,7 +13,6 @@ class DatePickerVC: UIViewController {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var selectedTimeAndDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
     @IBOutlet weak var setViewingButton: UIButton!
     
     private let notificationPublisher = NotificationPublisher()
@@ -25,7 +24,7 @@ class DatePickerVC: UIViewController {
        
     }
     
-    // sets viewing date and time
+    // sets viewing date and time and triggers notification
     @IBAction func dateAndTimeChosen(_ sender: Any) {
         
         // sets date format and puts selected viewing date and time on the screen
@@ -33,7 +32,7 @@ class DatePickerVC: UIViewController {
        formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
        selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)
         
-        // selected date and time from DatePicker triggers the notification
+        // selected date and time from DatePicker trigger the notification
         let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: datePicker.date)
         notificationPublisher.sendNotification(title: "Time to watch a movie!", body: "Your viewing is about to start.", dateInterval: triggerDate)
     }

@@ -11,6 +11,7 @@ import UserNotifications
 
 class NotificationPublisher: NSObject {
     
+    // creates notification content
     func sendNotification(title: String,
                           body: String,
                           dateInterval: DateComponents?) {
