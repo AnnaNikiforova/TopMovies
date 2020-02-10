@@ -20,10 +20,11 @@ class MovieTableViewCell: UITableViewCell {
     
     // cell configuration
     func setMovie(movie: Movie) {
-        movieImageView.image = movie.image
+       // MARK: FIX THIS ERROR
+        movieImageView.image = movie.poster
         movieNameLabel.text = movie.name
         releaseDateLabel.text = movie.date
-        ratingLabel.text = movie.rating
+        ratingLabel.text = String(Int(movie.rating /* * 10 */))
         descriptionTextView.text = movie.description
     }
     

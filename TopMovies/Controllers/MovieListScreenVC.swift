@@ -12,7 +12,7 @@ class MovieListScreenVC: UIViewController {
     
     // data for TableView
     var movies: [Movie] = []
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +24,8 @@ class MovieListScreenVC: UIViewController {
     func createArray() -> [Movie] {
         
         var tempMovies: [Movie] = []
-        let movie1 = Movie(image: #imageLiteral(resourceName: "avengersposter"), name: "Avengers: Infinity War ", date: "April 25, 2018", rating: "83", description: "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy…")
-        let movie2 = Movie(image: #imageLiteral(resourceName: "venom"), name: "Venom", date: "September 28, 2018", rating: "66", description: "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect…")
+        let movie1 = Movie(poster: #imageLiteral(resourceName: "avengersposter"), name: "Avengers: Infinity War", date: "April 25, 2018", rating: 83, description: "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy…")
+        let movie2 = Movie(poster: #imageLiteral(resourceName: "venom"), name: "Venom", date: "September 28, 2018", rating: 66, description: "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect…")
         
         tempMovies.append(movie1)
         tempMovies.append(movie2)
@@ -53,3 +53,6 @@ extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+
+

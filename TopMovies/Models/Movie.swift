@@ -11,14 +11,14 @@ import UIKit
 
 class Movie {
     
-    var image: UIImage
+    var poster: UIImage
     var name: String
     var date: String
-    var rating: String
+    var rating: Double
     var description: String
     
-    init(image: UIImage, name: String, date: String, rating: String, description: String) {
-        self.image = image
+    init(poster: UIImage, name: String, date: String, rating: Double, description: String) {
+        self.poster = poster
         self.name = name
         self.date = date
         self.rating = rating
