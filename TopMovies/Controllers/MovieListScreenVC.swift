@@ -16,7 +16,7 @@ class MovieListScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // sets data
+        // sets data from temporary array
         movies = createArray()
     }
     

@@ -20,7 +20,7 @@ class MovieTableViewCell: UITableViewCell {
     
     // cell configuration
     func setMovie(movie: Movie) {
-       // MARK: FIX THIS ERROR
+       // MARK: FIX THE IMAGE THING, IT'S A STRING
         movieImageView.image = movie.poster
         movieNameLabel.text = movie.name
         releaseDateLabel.text = movie.date
