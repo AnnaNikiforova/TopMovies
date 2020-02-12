@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DatePickerVC: UIViewController {
+class ScheduleViewingVC: UIViewController {
     
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var selectedTimeAndDateLabel: UILabel!

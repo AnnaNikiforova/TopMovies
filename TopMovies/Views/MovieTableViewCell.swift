@@ -16,7 +16,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    @IBOutlet weak var sheduleViewingButton: UIButton!
+    @IBOutlet weak var scheduleViewingButton: UIButton!
     
     // cell configuration
     func setMovie(movie: MovieInfo) {
@@ -39,7 +39,7 @@ class MovieTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func sheduleButtonTapped(_ sender: Any) {
+    @IBAction func scheduleButtonTapped(_ sender: Any) {
         print("works")
     }
 }

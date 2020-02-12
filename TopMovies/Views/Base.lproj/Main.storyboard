@@ -80,11 +80,11 @@
                                                         <constraint firstAttribute="height" constant="30" id="aHo-uo-gkI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <state key="normal" title="Shedule Viewing">
+                                                    <state key="normal" title="Schedule Viewing">
                                                         <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="sheduleButtonTapped:" destination="tle-50-AP4" eventType="touchUpInside" id="Pbt-b0-oBG"/>
+                                                        <action selector="scheduleButtonTapped:" destination="tle-50-AP4" eventType="touchUpInside" id="Pbt-b0-oBG"/>
                                                         <segue destination="zyq-2D-l1V" kind="show" identifier="toDatePicker" id="xv3-2Z-PfS"/>
                                                     </connections>
                                                 </button>
@@ -117,7 +117,7 @@
                                             <outlet property="movieNameLabel" destination="hpz-Et-mF9" id="b4f-s2-lX0"/>
                                             <outlet property="ratingLabel" destination="0ch-nJ-QVq" id="2Zu-Po-x8W"/>
                                             <outlet property="releaseDateLabel" destination="UR7-2P-2hI" id="Zbw-cc-X5H"/>
-                                            <outlet property="sheduleViewingButton" destination="uPK-Ab-21a" id="YOc-U3-jCF"/>
+                                            <outlet property="scheduleViewingButton" destination="uPK-Ab-21a" id="YOc-U3-jCF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
-        <!--Date PickerVC-->
+        <!--Schedule ViewingVC-->
         <scene sceneID="x4a-ey-6WW">
             <objects>
-                <viewController id="zyq-2D-l1V" customClass="DatePickerVC" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zyq-2D-l1V" customClass="ScheduleViewingVC" customModule="TopMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pKd-OW-Xzo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -24,7 +24,7 @@ class MovieListScreenVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "toDatePicker") {
-            let vc = segue.destination as! DatePickerVC
+            let vc = segue.destination as! ScheduleViewingVC
             vc.desiredMovieNameLabel = "hi"
         }
     }
