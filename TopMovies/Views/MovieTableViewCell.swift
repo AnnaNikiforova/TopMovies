@@ -19,13 +19,25 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var sheduleViewingButton: UIButton!
     
     // cell configuration
-    func setMovie(movie: Movie) {
+    func setMovie(movie: MovieInfo) {
+        
+        movieNameLabel.text = movie.title
+        releaseDateLabel.text = movie.release_date
+        ratingLabel.text = String(Int(movie.vote_average * 10))
+        descriptionTextView.text = movie.overview
+        
         // TODO: FIX THE IMAGE THING, IT'S A STRING!
-        movieImageView.image = movie.poster
-        movieNameLabel.text = movie.name
-        releaseDateLabel.text = movie.date
-        ratingLabel.text = String(Int(movie.rating /* * 10 */))
-        descriptionTextView.text = movie.description
+        if let imageURL = URL(string: movie.poster_path) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: imageURL)
+                if let data = data {
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        self.movieImageView.image = image
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func sheduleButtonTapped(_ sender: Any) {

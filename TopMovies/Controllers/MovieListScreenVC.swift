@@ -8,33 +8,21 @@
 
 import UIKit
 
+
 class MovieListScreenVC: UIViewController {
     
-    // data for TableView
-    var movies: [Movie] = []
+    var movies = [MovieInfo]()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // sets data from temporary array
-        movies = createArray()
+        getData()
     }
     
-    // function creates data for TableView and returns it into a temporary array
-    func createArray() -> [Movie] {
-        
-        var tempMovies: [Movie] = []
-        let movie1 = Movie(poster: #imageLiteral(resourceName: "avengersposter"), name: "Avengers: Infinity War", date: "April 25, 2018", rating: 83, description: "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy…")
-        let movie2 = Movie(poster: #imageLiteral(resourceName: "venom"), name: "Venom", date: "September 28, 2018", rating: 66, description: "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect…")
-        
-        tempMovies.append(movie1)
-        tempMovies.append(movie2)
-        return tempMovies
-    }
-
     // TODO: FIX LABEL TEXT TRANSFERRING
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if (segue.identifier == "toDatePicker") {
             let vc = segue.destination as! DatePickerVC
             vc.desiredMovieNameLabel = "hi"
@@ -42,6 +30,27 @@ class MovieListScreenVC: UIViewController {
     }
     
     // MARK: - JSON parsing
+    func getData() {
+        guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=4df29c189fd27f2129b274a60619e43c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=2019") else { return }
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            guard let data = data else { return }
+            print(data)
+            
+            do {
+                let downloadedMovieData = try JSONDecoder().decode(MovieData.self, from: data)
+                self.movies = downloadedMovieData.results
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        } .resume()
+    }
     
 }
 
@@ -60,10 +69,10 @@ extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
         // cell configuration
         cell.setMovie(movie: movie)
         cell.selectionStyle = .none
-    
+        
         return cell
     }
-
+    
 }
 
 
