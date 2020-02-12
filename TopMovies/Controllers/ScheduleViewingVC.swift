@@ -18,13 +18,14 @@ class ScheduleViewingVC: UIViewController {
     private let notificationPublisher = NotificationPublisher()
     
     // TODO: FIX LABEL TEXT TRANSFERRING
-    var desiredMovieNameLabel: String!
+    var desiredMovieNameLabel: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // TODO: FIX LABEL TEXT TRANSFERRING
         movieNameLabel.text = desiredMovieNameLabel
+        
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
         

@@ -20,15 +20,6 @@ class MovieListScreenVC: UIViewController {
         getData()
     }
     
-    // TODO: FIX LABEL TEXT TRANSFERRING
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "toDatePicker") {
-            let vc = segue.destination as! ScheduleViewingVC
-            vc.desiredMovieNameLabel = "hi"
-        }
-    }
-    
     // MARK: - JSON parsing
     func getData() {
         guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=4df29c189fd27f2129b274a60619e43c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=2019") else { return }
