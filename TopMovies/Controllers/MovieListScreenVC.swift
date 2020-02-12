@@ -12,10 +12,10 @@ class MovieListScreenVC: UIViewController {
     
     // data for TableView
     var movies: [Movie] = []
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // sets data from temporary array
         movies = createArray()
     }
@@ -32,8 +32,20 @@ class MovieListScreenVC: UIViewController {
         return tempMovies
     }
 
+    // TODO: FIX LABEL TEXT TRANSFERRING
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "toDatePicker") {
+            let vc = segue.destination as! DatePickerVC
+            vc.desiredMovieNameLabel = "hi"
+        }
+    }
+    
+    // MARK: - JSON parsing
+    
 }
 
+// MARK: - UITableView
 extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,10 +60,10 @@ extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
         // cell configuration
         cell.setMovie(movie: movie)
         cell.selectionStyle = .none
-        
+    
         return cell
     }
-    
+
 }
 
 

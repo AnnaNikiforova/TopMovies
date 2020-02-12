@@ -9,7 +9,7 @@
 import UIKit
 
 class DatePickerVC: UIViewController {
-
+    
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var selectedTimeAndDateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -17,11 +17,16 @@ class DatePickerVC: UIViewController {
     
     private let notificationPublisher = NotificationPublisher()
     
+    // TODO: FIX LABEL TEXT TRANSFERRING
+    var desiredMovieNameLabel: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: FIX LABEL TEXT TRANSFERRING
+        movieNameLabel.text = desiredMovieNameLabel
         datePicker?.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
-       
+        
     }
     
     // sets viewing date and time and triggers notification
@@ -29,12 +34,11 @@ class DatePickerVC: UIViewController {
         
         // sets date format and puts selected viewing date and time on the screen
         let formatter = DateFormatter()
-       formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
-       selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)
-        
+        formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
+        selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)        
         // selected date and time from DatePicker trigger the notification
         let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: datePicker.date)
-        notificationPublisher.sendNotification(title: "Time to watch a movie!", body: "Your viewing is about to start.", dateInterval: triggerDate)
+        notificationPublisher.sendNotification(title: "Time to watch \(desiredMovieNameLabel ?? "a movie")!", body: "Your viewing is about to start.", dateInterval: triggerDate)
     }
     
 }

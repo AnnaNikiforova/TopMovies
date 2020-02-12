@@ -20,7 +20,7 @@ class MovieTableViewCell: UITableViewCell {
     
     // cell configuration
     func setMovie(movie: Movie) {
-       // MARK: FIX THE IMAGE THING, IT'S A STRING
+        // TODO: FIX THE IMAGE THING, IT'S A STRING!
         movieImageView.image = movie.poster
         movieNameLabel.text = movie.name
         releaseDateLabel.text = movie.date
@@ -28,4 +28,7 @@ class MovieTableViewCell: UITableViewCell {
         descriptionTextView.text = movie.description
     }
     
+    @IBAction func sheduleButtonTapped(_ sender: Any) {
+        print("works")
+    }
 }

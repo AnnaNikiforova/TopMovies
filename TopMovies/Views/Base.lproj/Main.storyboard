@@ -84,7 +84,8 @@
                                                         <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="zyq-2D-l1V" kind="show" id="xv3-2Z-PfS"/>
+                                                        <action selector="sheduleButtonTapped:" destination="tle-50-AP4" eventType="touchUpInside" id="Pbt-b0-oBG"/>
+                                                        <segue destination="zyq-2D-l1V" kind="show" identifier="toDatePicker" id="xv3-2Z-PfS"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
