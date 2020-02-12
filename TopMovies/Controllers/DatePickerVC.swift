@@ -35,9 +35,11 @@ class DatePickerVC: UIViewController {
         // sets date format and puts selected viewing date and time on the screen
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
-        selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)        
+        selectedTimeAndDateLabel.text = formatter.string(from: datePicker.date)
+        
         // selected date and time from DatePicker trigger the notification
         let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: datePicker.date)
+        
         notificationPublisher.sendNotification(title: "Time to watch \(desiredMovieNameLabel ?? "a movie")!", body: "Your viewing is about to start.", dateInterval: triggerDate)
     }
     

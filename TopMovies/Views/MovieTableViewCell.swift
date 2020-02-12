@@ -26,8 +26,7 @@ class MovieTableViewCell: UITableViewCell {
         ratingLabel.text = String(Int(movie.vote_average * 10))
         descriptionTextView.text = movie.overview
         
-        // TODO: FIX THE IMAGE THING, IT'S A STRING!
-        if let imageURL = URL(string: movie.poster_path) {
+        if let imageURL = URL(string: "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
