@@ -25,7 +25,8 @@ class ScheduleViewingVC: UIViewController {
         
         // TODO: FIX LABEL TEXT TRANSFERRING
         movieNameLabel.text = desiredMovieNameLabel
-        datePicker?.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
         
     }
     

@@ -22,10 +22,28 @@ class MovieCell: UITableViewCell {
     func setMovie(movie: MovieInfo) {
         
         movieNameLabel.text = movie.title
-        releaseDateLabel.text = movie.release_date
         ratingLabel.text = String(Int(movie.vote_average * 10))
         descriptionTextView.text = movie.overview
         
+        // date formatting
+        func formatDate(dateMovie: String) -> String {
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "yyyy-MM-dd"
+            
+            let dateFormatterPrint = DateFormatter()
+            dateFormatterPrint.dateFormat = "MMMM dd, yyyy"
+            
+            if let date = dateFormatterGet.date(from: movie.release_date) {
+                return dateFormatterPrint.string(from: date)
+            } else {
+                print("There was an error decoding the string")
+            }
+            return ""
+        }
+        releaseDateLabel.text = formatDate(dateMovie: movie.release_date)
+        
+        
+        // image converting
         if let imageURL = URL(string: "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
