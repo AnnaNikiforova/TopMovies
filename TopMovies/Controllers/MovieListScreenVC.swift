@@ -42,15 +42,6 @@ class MovieListScreenVC: UIViewController {
             }
         } .resume()
     }
-
-   //  TODO: FIX LABEL TEXT TRANSFERRING
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if (segue.identifier == "toDatePicker") {
-//            let vc = segue.destination as! ScheduleViewingVC
-//            vc.desiredMovieNameLabel = "hi"
-//        }
-//    }
     
 }
 
