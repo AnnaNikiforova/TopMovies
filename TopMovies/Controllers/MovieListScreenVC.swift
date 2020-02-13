@@ -42,6 +42,15 @@ class MovieListScreenVC: UIViewController {
             }
         } .resume()
     }
+
+   //  TODO: FIX LABEL TEXT TRANSFERRING
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if (segue.identifier == "toDatePicker") {
+//            let vc = segue.destination as! ScheduleViewingVC
+//            vc.desiredMovieNameLabel = "hi"
+//        }
+//    }
     
 }
 
@@ -60,11 +69,30 @@ extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
         // cell configuration
         cell.setMovie(movie: movie)
         cell.selectionStyle = .none
+        cell.delegate = self
         
         return cell
     }
     
 }
+
+extension MovieListScreenVC: MovieCellDelegate {
+    
+    func didTapScheduleButton(title: String) {
+        print(title)
+        self.performSegue(withIdentifier: "toDatePicker", sender: title)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDatePicker" {
+            let vc = segue.destination as! ScheduleViewingVC
+            vc.desiredMovieNameLabel = sender as? String
+        }
+    }
+    
+}
+
 
 
 

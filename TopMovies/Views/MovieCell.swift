@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol MovieCellDelegate {
+    func didTapScheduleButton(title: String)
+}
 
 class MovieCell: UITableViewCell {
     
@@ -18,6 +21,8 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBOutlet weak var scheduleViewingButton: UIButton!
+    
+    var delegate: MovieCellDelegate?
     
     // cell configuration
     func setMovie(movie: MovieInfo) {
@@ -43,7 +48,6 @@ class MovieCell: UITableViewCell {
         }
         releaseDateLabel.text = formatDate(dateMovie: movie.release_date)
         
-        
         // image converting
         if let imageURL = URL(string: "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path) {
             DispatchQueue.global().async {
@@ -59,6 +63,8 @@ class MovieCell: UITableViewCell {
     }
     
     @IBAction func scheduleButtonTapped(_ sender: Any) {
-        print("works")
+        if (self.delegate != nil) {
+            self.delegate!.didTapScheduleButton(title: movieNameLabel.text!)
+        }
     }
 }

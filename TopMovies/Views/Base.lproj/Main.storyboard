@@ -85,7 +85,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="scheduleButtonTapped:" destination="tle-50-AP4" eventType="touchUpInside" id="Pbt-b0-oBG"/>
-                                                        <segue destination="zyq-2D-l1V" kind="show" identifier="toDatePicker" id="xv3-2Z-PfS"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -139,6 +138,7 @@
                     <navigationItem key="navigationItem" id="jp0-Gx-8RZ"/>
                     <connections>
                         <outlet property="tableView" destination="dbr-ix-ZvM" id="cRA-Z3-TgI"/>
+                        <segue destination="zyq-2D-l1V" kind="show" identifier="toDatePicker" id="JR5-CS-m77"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
