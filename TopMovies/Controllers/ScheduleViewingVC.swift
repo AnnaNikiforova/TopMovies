@@ -43,6 +43,8 @@ class ScheduleViewingVC: UIViewController {
         let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: datePicker.date)
         
         notificationPublisher.sendNotification(title: "Time to watch \(desiredMovieNameLabel ?? "a movie")!", body: "Your viewing is about to start.", dateInterval: triggerDate)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

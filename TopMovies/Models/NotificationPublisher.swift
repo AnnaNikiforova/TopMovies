@@ -31,7 +31,8 @@ class NotificationPublisher: NSObject {
         UNUserNotificationCenter.current().delegate = self
         
         // creates request for user permission
-        let request = UNNotificationRequest(identifier: "TestLocalNotification", content: notificationContent, trigger: delayDateTrigger)
+        let uniqueIdentifier = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uniqueIdentifier, content: notificationContent, trigger: delayDateTrigger)
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {

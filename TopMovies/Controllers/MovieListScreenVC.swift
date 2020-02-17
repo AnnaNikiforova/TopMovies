@@ -67,6 +67,7 @@ extension MovieListScreenVC: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+// MARK: - Delegate
 extension MovieListScreenVC: MovieCellDelegate {
     
     func didTapScheduleButton(title: String) {

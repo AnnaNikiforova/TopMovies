@@ -63,8 +63,6 @@ class MovieCell: UITableViewCell {
     }
     
     @IBAction func scheduleButtonTapped(_ sender: Any) {
-        if (self.delegate != nil) {
             self.delegate!.didTapScheduleButton(title: movieNameLabel.text!)
-        }
     }
 }
