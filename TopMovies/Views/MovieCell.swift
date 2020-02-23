@@ -49,7 +49,7 @@ class MovieCell: UITableViewCell {
         releaseDateLabel.text = formatDate(dateMovie: movie.release_date)
         
         // image converting
-        if let imageURL = URL(string: "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path) {
+        if let imageURL = URL(string: "https://image.tmdb.org/t/p/w500" + movie.poster_path) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {

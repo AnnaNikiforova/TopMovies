@@ -177,7 +177,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-XT-fY7">
-                                <rect key="frame" x="80" y="554" width="87" height="50"/>
+                                <rect key="frame" x="80" y="554" width="254" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5tO-4z-DOC"/>
                                 </constraints>
@@ -198,7 +198,7 @@
                             <constraint firstItem="ebf-x8-qFD" firstAttribute="top" secondItem="CXF-er-Qb0" secondAttribute="bottom" constant="20" id="IS9-kz-UaZ"/>
                             <constraint firstItem="Epg-XT-fY7" firstAttribute="top" secondItem="gv6-cn-Z2Y" secondAttribute="bottom" constant="25" id="Oeh-d4-hZQ"/>
                             <constraint firstItem="gv6-cn-Z2Y" firstAttribute="centerX" secondItem="pKd-OW-Xzo" secondAttribute="centerX" id="PVP-HS-hwD"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Epg-XT-fY7" secondAttribute="trailing" constant="60" id="TGQ-5J-jqP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Epg-XT-fY7" secondAttribute="trailing" constant="60" id="TGQ-5J-jqP"/>
                             <constraint firstItem="ebf-x8-qFD" firstAttribute="leading" secondItem="RJr-rN-tBA" secondAttribute="leading" constant="20" id="UtK-Vz-lBf"/>
                             <constraint firstItem="gv6-cn-Z2Y" firstAttribute="top" secondItem="ebf-x8-qFD" secondAttribute="bottom" constant="30" id="UwL-ag-phH"/>
                             <constraint firstItem="gv6-cn-Z2Y" firstAttribute="centerY" secondItem="pKd-OW-Xzo" secondAttribute="centerY" id="b2N-DE-ndC"/>
